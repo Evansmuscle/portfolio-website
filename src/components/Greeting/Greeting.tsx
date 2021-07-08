@@ -1,10 +1,16 @@
 import './Greeting.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Greeting = () => {
   return (
-    <React.Fragment>
+    <motion.div
+      initial={{ translateX: 0 }}
+      animate={{ translateX: 0 }}
+      exit={{ translateX: -2000 }}
+      transition={{ type: 'spring', duration: 1 }}
+    >
       <h1>Hello, my name is Kaan.</h1>
       <p className="subtitle">
         Welcome to my website!{' '}
@@ -12,7 +18,7 @@ const Greeting = () => {
           &rarr;
         </Link>
       </p>
-    </React.Fragment>
+    </motion.div>
   );
 };
 

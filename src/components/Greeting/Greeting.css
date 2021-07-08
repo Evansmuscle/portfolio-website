@@ -65,6 +65,9 @@ h1::after {
   width: 100%;
 }
 
+/* .to-website-button:active {
+} */
+
 @keyframes arrow-border {
   0% {
     width: 0;

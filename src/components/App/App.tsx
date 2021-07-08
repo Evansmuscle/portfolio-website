@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { Switch, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 
 import Greeting from '../Greeting';
 import Portfolio from '../Portfolio';
@@ -11,15 +11,19 @@ interface AppProps {
 }
 
 const App: React.FC<AppProps> = () => {
+  const location = useLocation();
+
   return (
-    <Switch>
-      <Route exact path="/">
-        <Greeting />
-      </Route>
-      <Route exact path="/portfolio">
-        <Portfolio />
-      </Route>
-    </Switch>
+    <AnimatePresence exitBeforeEnter>
+      <Switch location={location} key={location.pathname}>
+        <Route exact path="/">
+          <Greeting />
+        </Route>
+        <Route exact path="/portfolio">
+          <Portfolio />
+        </Route>
+      </Switch>
+    </AnimatePresence>
   );
 };
 

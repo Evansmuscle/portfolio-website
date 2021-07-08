@@ -5,6 +5,7 @@
   width: 100vw;
   height: 5rem;
   background-color: var(--header-color);
+  opacity: 0.9;
 }
 
 .header-list {

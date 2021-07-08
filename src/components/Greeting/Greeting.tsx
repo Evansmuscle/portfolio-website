@@ -11,13 +11,15 @@ const Greeting = () => {
       exit={{ translateX: -2000 }}
       transition={{ type: 'spring', duration: 1 }}
     >
-      <h1>Hello, my name is Kaan.</h1>
-      <p className="subtitle">
-        Welcome to my website!{' '}
-        <Link to="/portfolio" className="to-website-button">
-          &rarr;
-        </Link>
-      </p>
+      <div className="greeting-wrapper">
+        <h1>Hello, my name is Kaan.</h1>
+        <p className="subtitle">
+          Welcome to my website!{' '}
+          <Link to="/portfolio" className="to-website-button">
+            &rarr;
+          </Link>
+        </p>
+      </div>
     </motion.div>
   );
 };

@@ -1,8 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-import Header from '../Header';
-import Home from '../Home';
+import Header from "../Header";
+import Home from "../Home";
+import ReactFullpage from "@fullpage/react-fullpage";
 
 const Portfolio = () => {
   return (
@@ -10,12 +11,24 @@ const Portfolio = () => {
       initial={{ translateX: 3000 }}
       animate={{ translateX: 0 }}
       exit={{ translateX: 3000 }}
-      transition={{ type: 'spring', duration: 1 }}
+      transition={{ type: "spring", duration: 1 }}
     >
-      <div className="portfolio-container">
-        <Header />
-        <Home />
-      </div>
+      <ReactFullpage
+        scrollingSpeed={750}
+        render={({ state, fullpageApi }) => {
+          return (
+            <ReactFullpage.Wrapper>
+              <div className="portfolio-container section">
+                <Header />
+                <Home />
+              </div>
+              <div className="portfolio-container section">
+                <Home />
+              </div>
+            </ReactFullpage.Wrapper>
+          );
+        }}
+      />
     </motion.div>
   );
 };

@@ -25,6 +25,12 @@ const Portfolio = () => {
               <div className="portfolio-container section">
                 <Home />
               </div>
+              <div className="portfolio-container section">
+                <Home />
+              </div>
+              <div className="portfolio-container section">
+                <Home />
+              </div>
             </ReactFullpage.Wrapper>
           );
         }}

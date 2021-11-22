@@ -1,0 +1,12 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  font-family: "Montserrat", sans-serif;
+  place-items: center;
+  place-content: center;
+}
+
+.hand-image {
+  width: calc(70% + 20vw);
+}

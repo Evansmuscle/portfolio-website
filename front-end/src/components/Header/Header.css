@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 5rem;
+  height: 8rem;
   background-color: var(--header-color);
   opacity: 0.9;
 }
@@ -19,8 +19,9 @@
 .header-list-item {
   margin-right: 3rem;
   color: var(--bg-color);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   cursor: pointer;
+  font-size: 2rem;
 }
 
 .header-list-item-first {

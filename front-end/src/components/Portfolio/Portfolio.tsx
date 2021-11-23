@@ -18,8 +18,8 @@ const Portfolio = () => {
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
+              <Header />
               <div className="portfolio-container section">
-                <Header />
                 <Home />
               </div>
               <div className="portfolio-container section">

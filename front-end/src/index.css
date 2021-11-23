@@ -1,6 +1,8 @@
 :root {
-  --bg-color: hsl(49 37% 94%);
-  --header-color: rgb(96, 102, 115);
+  --bg-color: hsl(0, 0%, 16%);
+  --header-color: hsl(173, 53%, 91%);
+  --primary-color: hsl(173, 53%, 91%);
+  --secondary-color: hsl(358, 96%, 89%);
   --typewriterSpeed: 6s;
   --typewriterCharacters: 23;
 }
@@ -14,6 +16,7 @@
 }
 
 html {
+  font-size: 62.5%;
   box-sizing: border-box;
 }
 

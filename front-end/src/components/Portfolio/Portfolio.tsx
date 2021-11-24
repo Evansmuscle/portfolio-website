@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Header from "../Header";
 import Home from "../Home";
 import ReactFullpage from "@fullpage/react-fullpage";
+import About from "components/About";
 
 const Portfolio = () => {
   return (
@@ -23,7 +24,7 @@ const Portfolio = () => {
                 <Home />
               </div>
               <div className="portfolio-container section">
-                <Home />
+                <About />
               </div>
               <div className="portfolio-container section">
                 <Home />

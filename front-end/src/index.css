@@ -3,6 +3,8 @@
   --header-color: hsl(173, 53%, 91%);
   --primary-color: hsl(173, 53%, 91%);
   --secondary-color: hsl(358, 96%, 89%);
+  --font-color-primary: rgba(255, 255, 255, 1);
+  --font-color-secondary: hsl(0, 0%, 16%);
   --typewriterSpeed: 6s;
   --typewriterCharacters: 23;
 }
@@ -23,4 +25,5 @@ html {
 body {
   font-family: "Source Sans Pro", sans-serif;
   background: var(--bg-color);
+  color: var(--font-color-primary);
 }

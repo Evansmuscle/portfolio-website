@@ -6,7 +6,7 @@
 }
 
 h1 {
-  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  font-size: clamp(1.5rem, 3vw + 1.5rem, 6rem);
   position: relative;
   font-family: "Source Code Pro", monospace;
   position: relative;
@@ -40,7 +40,7 @@ h1::after {
 
 .subtitle {
   color: hsl(0, 0%, 0% / 0.7);
-  font-size: 2rem;
+  font-size: 3.5rem;
   font-weight: 400;
   opacity: 0;
   transform: translateY(3rem);

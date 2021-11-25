@@ -1,6 +1,6 @@
 import "./Sphere.css";
 import React, { useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
+import { ThreeEvent, useFrame } from "@react-three/fiber";
 import { Color } from "three";
 
 const Sphere: React.FC = (props: JSX.IntrinsicElements["mesh"]) => {
@@ -12,12 +12,40 @@ const Sphere: React.FC = (props: JSX.IntrinsicElements["mesh"]) => {
   sphereColor.setColorName("hotpink");
   sphereColorHover.setColorName("royalblue");
 
+  const onPointerDown = (_event: ThreeEvent<MouseEvent>) => {
+    click(true);
+  };
+
+  const onPointerMove = (event: ThreeEvent<PointerEvent>) => {
+    if (!clicked) return;
+
+    ref.current.rotation.x += (event.clientX - ref.current.rotation.x) / 15000;
+    ref.current.rotation.y += (event.clientY - ref.current.rotation.y) / 15000;
+    ref.current.rotation.z +=
+      (event.clientY -
+        event.clientX -
+        (ref.current.rotation.y - ref.current.rotation.x)) /
+      15000;
+  };
+
+  const onPointerUp = (_event: ThreeEvent<MouseEvent>) => {
+    click(false);
+  };
+
+  const onPointerOut = (_event: ThreeEvent<PointerEvent>) => {
+    hover(false);
+    click(false);
+  };
+
   const [hovered, hover] = useState(false);
   const [clicked, click] = useState(false);
 
-  useFrame((state, delta) => {
+  useFrame((_state, _delta) => {
+    if (clicked) return;
+
     ref.current.rotation.x += 0.003;
     ref.current.rotation.y += 0.003;
+    ref.current.rotation.z += 0.003;
   });
 
   return (
@@ -25,9 +53,11 @@ const Sphere: React.FC = (props: JSX.IntrinsicElements["mesh"]) => {
       {...props}
       ref={ref}
       scale={clicked ? 1.05 : 1}
-      onClick={(event) => click(!clicked)}
       onPointerOver={(event) => hover(true)}
-      onPointerOut={(event) => hover(false)}
+      onPointerOut={onPointerOut}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
     >
       <sphereGeometry args={[2, 32, 16]} />
       <meshStandardMaterial
